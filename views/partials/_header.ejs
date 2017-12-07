@@ -1,0 +1,13 @@
+<title>TinyApp</title>
+<%if(typeof user !== "undefined"){%>
+  <h6>Logged in as <%= user.email %></h6>
+  <form method="POST" action="/logout">
+    <input type="submit" name="Logout" value="Logout">
+  </form>
+<%} else {%>
+<div class="row">
+<button class="btn btn-block"><a href="/login_page">Login</a></button>
+<button class="btn btn-block"><a href="/register">Register Now</a></button>
+</div>
+<%}%>
+

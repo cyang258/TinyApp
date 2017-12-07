@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title><% include ./partials/_header %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="text-center">
+  <h2>Your URL and ITS Shortened form</h3>
+  <div style="margin:200px;">
+    <h5>Shortened URL: <%=shortURL %></h5>
+    <h5>Your full URL: <%= fullURL %></h5>
+    <form method="POST" action="/urls/<%=shortURL %>/put?_method=PUT">
+      <input id="fullURL" type="text" name="fullURL" placeholder="http://<%=fullURL%>" style="width: 400px">
+      <button class="btn btn-block btn-primary text-center";">Update</button>
+    </form>
+  </div>
+  <div style="margin-top: 300px;">
+    <h3><a href="/urls">BACK TO HOME PAGE</a></h2>
+  </div>
+</div>
+</body>
+</html>

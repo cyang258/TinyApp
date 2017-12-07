@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <title><% include ./partials/_header %></title>
+
+</head>
+<body>
+
+
+  <h1 class="text-center">Work Become Much Easier By</h1>
+  <h2><button class="btn btn-block"><a href="/urls/new">ADD NEW URL</a></button></h2>
+  <h5>Here is my URL Blow</h5>
+  <% if (typeof urls !== "undefined") {%>
+  <ul>
+      <% for(let key in urls) { %>
+       <div class="row">
+        <div class="col-sm-6">
+          <li><a href="/u/<%=key%>"><%=key %></a> ----> <%= urls[key]%></li>
+        </div>
+        <div class="col-sm-1 text-left">
+          <a href="/urls/<%=key %>">Edit</a>
+        </div>
+        <div class="col-sm-1 text-center">
+             <form method="POST" action="/urls/<%=key %>/delete?_method=DELETE">
+             <button class="btn-danger">Delete</button></form>
+        </div>
+       </div>
+       <br>
+      <% } %>
+   </ul>
+   <% } %>
+</body>
+</html>
